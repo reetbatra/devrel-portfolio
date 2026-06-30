@@ -24,7 +24,7 @@ const events: CommunityEvent[] = [
     title: "Exa Days",
     org: "Exa Protocol",
     description:
-      "L1 Blockchains and Decentralisation, exploring the architecture behind the future of the internet.",
+      "Talked through L1 blockchains and what decentralisation actually changes at the infrastructure level.",
     proofUrl: "https://x.com/ExaProtocol/status/1656280478591201283",
     photo: "/p1.jpeg",
     photoAlt: "Exa Days talk",
@@ -38,7 +38,7 @@ const events: CommunityEvent[] = [
     title: "Tribe Academy",
     org: "Workshop",
     description:
-      "Exploring DevRel as a career choice, mentoring the next wave of developer advocates in Web3.",
+      "Talked about DevRel as a career. Mostly demystifying it for people thinking about making the switch.",
     proofUrl: "https://x.com/tribeacademy_in/status/1659239504149118977",
     photo: "/p2.jpeg",
     photoAlt: "Tribe Academy masterclass",
@@ -52,7 +52,7 @@ const events: CommunityEvent[] = [
     title: "StarkCon",
     org: "Pan-India · 11 Cities",
     description:
-      "Teaching Cairo and ZK proofs to 4,800+ developers across India. Built the StarkNet community from the ground up.",
+      "Teaching Cairo and ZK proofs to 4,800+ developers across India. We built the StarkNet community from scratch here.",
     proofUrl: "https://x.com/stark_con/status/1605872741944418305",
     photo: "/p3.jpeg",
     photoAlt: "StarkCon meetup",
@@ -66,7 +66,7 @@ const events: CommunityEvent[] = [
     title: "Cairo Bootcamp",
     org: "India's First",
     description:
-      "Organized India's first-ever Cairo bootcamp, a landmark moment for the Indian ZK developer community.",
+      "Organized India's first Cairo bootcamp. First time most of these developers had ever touched ZK.",
     proofUrl: "https://x.com/stark_con/status/1628659312498462721",
     photo: "/p4.png",
     photoAlt: "Cairo Bootcamp session",
@@ -259,7 +259,7 @@ export default function Community() {
             maxWidth: 580,
           }}
         >
-          Giving back to the community.
+          Where I show up.
         </h2>
         <p
           style={{
@@ -271,8 +271,7 @@ export default function Community() {
             lineHeight: 1.68,
           }}
         >
-          The Web3 and AI communities gave me the foundation I build on. I pay
-          it forward every chance I get.
+          Web3 taught me most of what I know. I try to do the same for whoever&apos;s coming up behind me.
         </p>
 
         <div

@@ -171,7 +171,7 @@ export default function Experience() {
           letterSpacing: "-0.025em",
         }}
       >
-        Where I&apos;ve built communities that matter.
+        Where I spent the last few years.
       </h2>
 
       <Job
@@ -193,9 +193,9 @@ export default function Experience() {
             num: "02",
             content: (
               <>
-                Improved developer onboarding by <B>40%</B> and grew ecosystem
-                adoption by <B>30%</B> through targeted developer education
-                programs.
+                Cut onboarding time by <B>40%</B> and grew ecosystem adoption{" "}
+                <B>30%</B> — mostly by rewriting docs and running hands-on
+                workshops instead of sending people to read whitepapers.
               </>
             ),
           },
@@ -203,8 +203,8 @@ export default function Experience() {
             num: "03",
             content: (
               <>
-                Managed <B>$21K in developer grants</B> across ecosystem
-                projects, accelerating protocol adoption.
+                Ran <B>$21K in developer grants</B>. Picked projects, tracked
+                them, and pushed for the ones that actually moved the needle.
               </>
             ),
           },
@@ -222,9 +222,9 @@ export default function Experience() {
             num: "01",
             content: (
               <>
-                Represented AggLayer at <B>ETH India</B> and{" "}
-                <B>ETH Global Bangkok</B>, driving cross-chain adoption across
-                the Polygon ecosystem.
+                Took AggLayer to <B>ETH India</B> and{" "}
+                <B>ETH Global Bangkok</B>. A lot of good conversations about
+                what cross-chain really solves (and what it doesn&apos;t).
               </>
             ),
           },
@@ -232,8 +232,8 @@ export default function Experience() {
             num: "02",
             content: (
               <>
-                Built and launched <B>Dabl Learn</B> — a cross-ecosystem
-                developer education platform spanning multiple protocols.
+                Built <B>Dabl Learn</B>, a learning platform covering Polygon,
+                AggLayer, and a few adjacent protocols.
               </>
             ),
           },
@@ -241,8 +241,8 @@ export default function Experience() {
             num: "03",
             content: (
               <>
-                Executed a cross-ecosystem DevRel strategy spanning Polygon and
-                partner protocols — from content to IRL events.
+                Ran DevRel across Polygon and partners: writing, events,
+                showing up at hackathons, the whole thing.
               </>
             ),
           },

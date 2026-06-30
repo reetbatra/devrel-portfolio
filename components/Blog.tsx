@@ -49,8 +49,8 @@ export default function Blog() {
               marginBottom: 28,
             }}
           >
-            Technical tutorials, DevRel strategy, ZK and AI deep dives, written
-            for developers by someone who codes alongside them.
+            I write about what I&apos;m figuring out: Cairo, ZK, AI agents, the DevRel
+            work. Notes for myself that turned into posts.
           </p>
           <a
             href="https://reet.hashnode.dev/"

@@ -28,7 +28,7 @@ const projects: Project[] = [
     name: "open-money-intel",
     category: "AI + Web3",
     description:
-      "Open-source platform using AI agents to surface actionable intelligence across DeFi protocols.",
+      "Open-source tool using AI agents to find useful signals across DeFi protocols.",
     tags: ["TypeScript", "AI Agents", "Next.js"],
     github: "https://github.com/reetbatra/open-money-intel",
     live: "https://open-money-intel.vercel.app/",
@@ -38,7 +38,7 @@ const projects: Project[] = [
     name: "deja-vu-agent",
     category: "AI",
     description:
-      "AI agent that detects and surfaces recurring failure patterns across large datasets using LLMs.",
+      "AI agent that finds recurring failure patterns across large datasets.",
     tags: ["Python", "FastAPI", "LLMs"],
     github: "https://github.com/reetbatra/deja-vu-agent",
   },
@@ -56,7 +56,7 @@ const projects: Project[] = [
     name: "zk-cred-verifier",
     category: "Web3",
     description:
-      "Zero-knowledge credential verification: prove claims about yourself without revealing the underlying data.",
+      "ZK credential verifier. Prove things about yourself without handing over the actual data.",
     tags: ["TypeScript", "ZK Proofs"],
     github: "https://github.com/reetbatra/zk-cred-verifier",
   },
@@ -252,8 +252,8 @@ export default function Projects() {
           lineHeight: 1.68,
         }}
       >
-        When I&apos;m not devrel-ing, I build. AI agents, ZK apps, on-chain
-        games, always at the edge of what&apos;s possible.
+        When I&apos;m not doing DevRel, I build. Mostly to understand what
+        I&apos;m supposed to be explaining.
       </p>
 
       <div

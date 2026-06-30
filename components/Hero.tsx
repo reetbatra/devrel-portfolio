@@ -80,8 +80,8 @@ export default function Hero() {
             fontWeight: 400,
           }}
         >
-          Developer Advocate at the intersection of crypto + AI, turning complex
-          protocols into communities developers actually love.
+          4 years of DevRel in Web3 and AI. I help protocols get adopted and
+          developers get unstuck.
         </p>
 
         {/* CTAs */}

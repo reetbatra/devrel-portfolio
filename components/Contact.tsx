@@ -78,8 +78,7 @@ export default function Contact() {
             marginBottom: 48,
           }}
         >
-          Open to DevRel, Developer Advocacy, and Technical Content roles across
-          AI and Web3.
+          Looking for DevRel roles in AI or Web3.
         </p>
 
         <a
