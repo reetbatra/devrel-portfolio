@@ -28,7 +28,7 @@ const projects: Project[] = [
     name: "open-money-intel",
     category: "AI + Web3",
     description:
-      "Open-source tool using AI agents to find useful signals across DeFi protocols.",
+      "Scans DeFi protocols with AI agents and surfaces what's actually moving. Open source.",
     tags: ["TypeScript", "AI Agents", "Next.js"],
     github: "https://github.com/reetbatra/open-money-intel",
     live: "https://open-money-intel.vercel.app/",
@@ -38,7 +38,7 @@ const projects: Project[] = [
     name: "deja-vu-agent",
     category: "AI",
     description:
-      "AI agent that finds recurring failure patterns across large datasets.",
+      "Give it logs or test results. It finds the failure patterns you keep running into.",
     tags: ["Python", "FastAPI", "LLMs"],
     github: "https://github.com/reetbatra/deja-vu-agent",
   },
@@ -47,7 +47,7 @@ const projects: Project[] = [
     name: "zk-wordle",
     category: "Web3",
     description:
-      "Wordle with ZK-proof-verified guesses built on Midnight's privacy-first blockchain.",
+      "Wordle where every guess gets ZK-proof verified on Midnight. Written in Compact.",
     tags: ["Compact", "Midnight", "TypeScript", "React"],
     github: "https://github.com/reetbatra/zk-wordle",
   },

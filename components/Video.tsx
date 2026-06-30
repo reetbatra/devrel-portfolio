@@ -80,7 +80,7 @@ const standalone: VideoCard[] = [
     badge: "Tool Demo",
     title: "Sasuke",
     description:
-      "Write Cairo contracts in TypeScript. Removes a lot of the initial friction for new devs.",
+      "Write Cairo contracts in TypeScript. Takes away a lot of the initial friction for devs just getting started.",
     views: "8.5K",
     platform: "X",
     url: "https://x.com/reet_batra/status/1920495575696331161",
@@ -106,7 +106,7 @@ const standalone: VideoCard[] = [
     badge: "Education",
     title: "Intro to Ethereum",
     description:
-      "Module 1 of Dabl Club DevCamp — teaching React devs how Ethereum works under the hood.",
+      "Module 1 of Dabl Club's DevCamp. For React devs who want to actually understand how Ethereum works.",
     views: "23",
     platform: "YouTube",
     url: "https://youtu.be/WgL8qW_1gAs",

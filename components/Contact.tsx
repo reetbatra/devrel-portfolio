@@ -48,7 +48,7 @@ export default function Contact() {
             marginBottom: 24,
           }}
         >
-          Open to opportunities
+          Currently looking
         </div>
 
         <h2
@@ -61,11 +61,11 @@ export default function Contact() {
             marginBottom: 28,
           }}
         >
-          Have an idea?
+          Have something
           <br />
-          Let&apos;s build
+          to build?
           <br />
-          <em style={{ color: "#c87358", fontStyle: "italic" }}>together.</em>
+          <em style={{ color: "#c87358", fontStyle: "italic" }}>Let&apos;s talk.</em>
         </h2>
 
         <p

@@ -102,7 +102,7 @@ export default function Stats() {
           style={{ padding: "52px 40px", borderRight: "1px solid #ece0d4" }}
         >
           <div style={numStyle}>{onboarding}%</div>
-          <div style={labelStyle}>Onboarding Lift</div>
+          <div style={labelStyle}>Faster Onboarding</div>
         </div>
         <div style={{ padding: "52px 0 52px 40px" }}>
           <div style={numStyle}>{events}+</div>
