@@ -110,7 +110,7 @@ export default function Hero() {
             Hire Me
           </a>
           <a
-            href="https://drive.google.com/file/d/1bEFjh0nAX7vX5Hw9BpIM5CB05UNJFVxZ/view"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="cta-resume"
