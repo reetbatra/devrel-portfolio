@@ -59,18 +59,20 @@ function Job({ period, company, role, tags, bullets, borderBottom }: JobProps) {
       }}
     >
       <div>
-        <div
-          style={{
-            fontFamily: "var(--font-dm-mono), monospace",
-            fontSize: 10,
-            color: "#9c8c80",
-            letterSpacing: "0.09em",
-            textTransform: "uppercase",
-            marginBottom: 14,
-          }}
-        >
-          {period}
-        </div>
+        {period && (
+          <div
+            style={{
+              fontFamily: "var(--font-dm-mono), monospace",
+              fontSize: 10,
+              color: "#9c8c80",
+              letterSpacing: "0.09em",
+              textTransform: "uppercase",
+              marginBottom: 14,
+            }}
+          >
+            {period}
+          </div>
+        )}
         <h3
           style={{
             fontFamily: "var(--font-dm-serif), serif",
@@ -175,7 +177,7 @@ export default function Experience() {
       </h2>
 
       <Job
-        period="2022 — 2024"
+        period=""
         company="StarkWare"
         role="Developer Relations Engineer"
         tags={["Cairo", "StarkNet", "ZK Proofs"]}
@@ -213,7 +215,7 @@ export default function Experience() {
       />
 
       <Job
-        period="2023 — 2024"
+        period=""
         company="DablClub"
         role="Developer Relations"
         tags={["Polygon", "AggLayer", "Education"]}

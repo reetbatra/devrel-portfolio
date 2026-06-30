@@ -222,6 +222,7 @@ export default function Hero() {
             src="/hero-photo.jpg"
             alt="Reet Batra speaking at ETH India"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1100px) 360px, 480px"
             style={{
               objectFit: "cover",
               objectPosition: "80% 6%",
