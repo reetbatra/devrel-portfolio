@@ -163,6 +163,7 @@ function CommunityCard({ event }: { event: CommunityEvent }) {
 
       {/* Photo overlay */}
       <div
+        className="community-photo-overlay"
         style={{
           position: "absolute",
           inset: 0,
@@ -243,7 +244,7 @@ export default function Community() {
               textTransform: "uppercase",
             }}
           >
-            04 — Community
+            04: Community
           </span>
           <div style={{ flex: 1, height: 1, background: "#302c28" }} />
         </div>
@@ -289,9 +290,13 @@ export default function Community() {
 
       <style>{`
         .proof-link:hover { opacity: 0.7; }
+        @media (hover: none) {
+          .community-photo-overlay { opacity: 0.16 !important; }
+        }
         @media (max-width: 768px) {
           #community { padding: 56px 20px !important; }
           #community > div > div:last-child { grid-template-columns: 1fr !important; }
+          .community-photo-overlay { opacity: 0.16 !important; }
         }
       `}</style>
     </div>

@@ -26,11 +26,11 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Reet Batra — Developer Advocate",
+  title: "Reet Batra: Developer Advocate",
   description:
     "Developer Advocate at the intersection of crypto + AI, turning complex protocols into communities developers actually love.",
   openGraph: {
-    title: "Reet Batra — Developer Advocate",
+    title: "Reet Batra- Developer Advocate",
     description:
       "4+ years DevRel in Web3 & AI. Reached 4,800+ devs, managed $21K in grants, organized 20+ events.",
     url: "https://reetbatra.com",

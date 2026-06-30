@@ -44,7 +44,7 @@ export default function Stats() {
 
   const devs = useCountUp(4800, 1600, started);
   const grants = useCountUp(21, 1600, started);
-  const onboarding = useCountUp(40, 1600, started);
+  const growth = useCountUp(30, 1600, started);
   const events = useCountUp(20, 1600, started);
 
   const numStyle: React.CSSProperties = {
@@ -101,8 +101,8 @@ export default function Stats() {
         <div
           style={{ padding: "52px 40px", borderRight: "1px solid #ece0d4" }}
         >
-          <div style={numStyle}>{onboarding}%</div>
-          <div style={labelStyle}>Faster Onboarding</div>
+          <div style={numStyle}>{growth}%</div>
+          <div style={labelStyle}>Ecosystem Growth</div>
         </div>
         <div style={{ padding: "52px 0 52px 40px" }}>
           <div style={numStyle}>{events}+</div>
@@ -118,8 +118,11 @@ export default function Stats() {
           }
           #stats-row > div > div {
             border-right: none !important;
-            padding: 24px 16px !important;
+            padding: 28px 12px !important;
             border-bottom: 1px solid #ece0d4 !important;
+          }
+          #stats-row > div > div:nth-child(odd) {
+            border-right: 1px solid #ece0d4 !important;
           }
           #stats-row > div > div:nth-child(3),
           #stats-row > div > div:nth-child(4) {

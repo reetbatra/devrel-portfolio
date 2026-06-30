@@ -49,6 +49,7 @@ interface JobProps {
 function Job({ period, company, role, tags, bullets, borderBottom }: JobProps) {
   return (
     <div
+      className="job-grid"
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 2fr",
@@ -161,7 +162,7 @@ export default function Experience() {
         margin: "0 auto",
       }}
     >
-      <SectionLabel text="01 — Experience" />
+      <SectionLabel text="01: Experience" />
       <h2
         style={{
           fontFamily: "var(--font-dm-serif), serif",
@@ -196,7 +197,7 @@ export default function Experience() {
             content: (
               <>
                 Cut onboarding time by <B>40%</B> and grew ecosystem adoption{" "}
-                <B>30%</B> — mostly by rewriting docs and running hands-on
+                <B>30%</B> mostly by rewriting docs and running hands-on
                 workshops instead of sending people to read whitepapers.
               </>
             ),
@@ -254,7 +255,8 @@ export default function Experience() {
       <style>{`
         @media (max-width: 768px) {
           #experience { padding: 56px 20px !important; max-width: 100% !important; }
-          #experience div[class*="job-grid"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+          .job-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+          .job-grid > div:first-child { padding-bottom: 0 !important; }
         }
       `}</style>
     </section>

@@ -17,41 +17,6 @@ export default function Hero() {
     >
       {/* LEFT: Text */}
       <div style={{ padding: "88px 0 80px" }}>
-        {/* Open to roles badge */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 9,
-            background: "#eef6f1",
-            border: "1px solid #b4d8c4",
-            borderRadius: 100,
-            padding: "7px 18px",
-            marginBottom: 44,
-          }}
-        >
-          <div
-            style={{
-              width: 7,
-              height: 7,
-              borderRadius: "50%",
-              background: "#52a878",
-              animation: "pulse 2.4s ease-in-out infinite",
-            }}
-          />
-          <span
-            style={{
-              fontFamily: "var(--font-dm-mono), monospace",
-              fontSize: 11,
-              letterSpacing: "0.1em",
-              color: "#3d7a5a",
-              textTransform: "uppercase",
-            }}
-          >
-            Open to DevRel Roles
-          </span>
-        </div>
-
         {/* Name */}
         <h1
           style={{
@@ -242,6 +207,7 @@ export default function Hero() {
 
         {/* Chip: 4800+ devs */}
         <div
+          className="chip-devs"
           style={{
             position: "absolute",
             top: 56,
@@ -284,6 +250,7 @@ export default function Hero() {
 
         {/* Chip: 4+ yrs */}
         <div
+          className="chip-yrs"
           style={{
             position: "absolute",
             top: 144,
@@ -310,6 +277,7 @@ export default function Hero() {
 
         {/* Chip: 20+ workshops */}
         <div
+          className="chip-workshops"
           style={{
             position: "absolute",
             bottom: 160,
@@ -336,6 +304,7 @@ export default function Hero() {
 
         {/* Chip: ETH India */}
         <div
+          className="chip-eth"
           style={{
             position: "absolute",
             bottom: 72,
@@ -388,12 +357,16 @@ export default function Hero() {
             min-height: auto !important;
             gap: 0 !important;
           }
-          #hero > div:first-child { padding: 48px 0 20px !important; }
-          #hero > div:first-child h1 { font-size: 58px !important; }
+          #hero > div:first-child { padding: 40px 0 24px !important; }
+          #hero > div:first-child h1 { font-size: 56px !important; }
           #hero > div:last-child {
-            height: 380px !important;
+            height: 360px !important;
             margin: 0 -20px !important;
           }
+          .chip-devs { top: 20px !important; left: 12px !important; }
+          .chip-yrs { top: 20px !important; right: 12px !important; }
+          .chip-workshops { bottom: 72px !important; right: 12px !important; }
+          .chip-eth { bottom: 12px !important; left: 12px !important; }
         }
       `}</style>
     </section>

@@ -1,21 +1,27 @@
 const categories = [
   {
+    title: "DevRel",
+    accentColor: "#5a4a8a",
+    skills: [
+      "Developer Advocacy",
+      "Technical Writing",
+      "Community Building",
+      "Workshop Design",
+      "Onboarding",
+      "Hackathons",
+      "Developer Programs",
+    ],
+  },
+  {
     title: "AI & LLMs",
+    accentColor: "#3d7a5a",
     skills: ["Claude API", "Vercel AI SDK", "Python", "LLMs", "AI Agents", "FastAPI"],
-  },
-  {
-    title: "Web3 & ZK",
-    skills: ["Cairo", "StarkNet", "ZK Proofs", "Solidity", "Smart Contracts", "Polygon"],
-  },
-  {
-    title: "Dev Stack",
-    skills: ["TypeScript", "React", "Next.js", "Node.js", "Git", "PostgreSQL"],
   },
 ];
 
 export default function TechStack() {
   return (
-    <div style={{ background: "#f5ede3", padding: "80px 48px" }}>
+    <div id="techstack" style={{ background: "#f5ede3", padding: "80px 48px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div
           style={{
@@ -34,15 +40,16 @@ export default function TechStack() {
               textTransform: "uppercase",
             }}
           >
-            02 — Tech Stack
+            02: Skills
           </span>
           <div style={{ flex: 1, height: 1, background: "#ddd0c0" }} />
         </div>
 
         <div
+          id="tech-stack-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: "repeat(2, 1fr)",
             gap: 52,
           }}
         >
@@ -52,7 +59,7 @@ export default function TechStack() {
                 style={{
                   fontFamily: "var(--font-dm-serif), serif",
                   fontSize: 22,
-                  color: "#1c1a17",
+                  color: cat.accentColor,
                   marginBottom: 20,
                   letterSpacing: "-0.01em",
                 }}
@@ -85,6 +92,7 @@ export default function TechStack() {
 
       <style>{`
         @media (max-width: 768px) {
+          #techstack { padding: 60px 20px !important; }
           #tech-stack-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
         }
       `}</style>

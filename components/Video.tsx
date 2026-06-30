@@ -51,7 +51,7 @@ const builderSeries: VideoCard[] = [
     episode: "E04",
     title: "Starknet Arcade",
     description:
-      "Snakes & Ladders, Russian Roulette, Rock Paper Scissors — all on-chain. Another Hacker Games winner.",
+      "Snakes & Ladders, Russian Roulette, Rock Paper Scissors: all on-chain. Another Hacker Games winner.",
     views: "1.1K",
     platform: "X",
     url: "https://x.com/reet_batra/status/1945390533721120997",
@@ -396,7 +396,7 @@ export default function Video() {
             textTransform: "uppercase",
           }}
         >
-          05 — On Camera
+          05: On Camera
         </span>
         <div style={{ flex: 1, height: 1, background: "#ece0d4" }} />
       </div>

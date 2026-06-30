@@ -225,7 +225,7 @@ export default function Projects() {
             textTransform: "uppercase",
           }}
         >
-          03 — Projects
+          03: Projects
         </span>
         <div style={{ flex: 1, height: 1, background: "#ece0d4" }} />
       </div>
@@ -273,7 +273,7 @@ export default function Projects() {
         .proj-live-link:hover { color: #a85f3e !important; }
         @media (max-width: 768px) {
           #projects { padding: 56px 20px !important; max-width: 100% !important; }
-          #projects > div:last-child { grid-template-columns: 1fr !important; }
+          #projects > div:last-of-type { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

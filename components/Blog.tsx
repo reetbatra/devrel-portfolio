@@ -1,6 +1,6 @@
 export default function Blog() {
   return (
-    <div style={{ background: "#f5ede3", padding: "80px 48px" }}>
+    <div id="blog-section" style={{ background: "#f5ede3", padding: "80px 48px" }}>
       <div
         style={{
           maxWidth: 1200,
@@ -23,7 +23,7 @@ export default function Blog() {
               marginBottom: 18,
             }}
           >
-            06 — Blog
+            06: Blog
           </div>
           <h2
             style={{
@@ -79,7 +79,8 @@ export default function Blog() {
       <style>{`
         .blog-cta:hover { opacity: 0.8; }
         @media (max-width: 768px) {
-          #blog-section > div { flex-direction: column !important; align-items: flex-start !important; }
+          #blog-section { padding: 60px 20px !important; }
+          #blog-section > div { flex-direction: column !important; align-items: flex-start !important; gap: 28px !important; }
         }
       `}</style>
     </div>
