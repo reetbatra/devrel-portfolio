@@ -36,10 +36,10 @@ export default function Nav() {
           RB
         </a>
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          {["Experience", "Projects", "Community"].map((item) => (
+          {["Experience", "Projects", "Community", "Videos"].map((item) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={item === "Videos" ? "#video" : `#${item.toLowerCase()}`}
               style={{
                 fontFamily: "var(--font-jakarta), sans-serif",
                 fontSize: 13.5,
