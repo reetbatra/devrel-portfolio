@@ -23,7 +23,7 @@ export default function Blog() {
               marginBottom: 18,
             }}
           >
-            05 — Blog
+            06 — Blog
           </div>
           <h2
             style={{

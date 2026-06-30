@@ -6,6 +6,7 @@ import Experience from "@/components/Experience";
 import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import Community from "@/components/Community";
+import Video from "@/components/Video";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ export default function Home() {
       <TechStack />
       <Projects />
       <Community />
+      <Video />
       <Blog />
       <Contact />
       <Footer />
