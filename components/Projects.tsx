@@ -38,8 +38,8 @@ const projects: Project[] = [
     name: "deja-vu-agent",
     category: "AI",
     description:
-      "Give it logs or test results. It finds the failure patterns you keep running into.",
-    tags: ["Python", "FastAPI", "LLMs"],
+      "Support agent that remembers. Answers from your docs, saves each answer as a reusable skill, and never solves the same question twice.",
+    tags: ["Python", "FastAPI", "Claude API"],
     github: "https://github.com/reetbatra/deja-vu-agent",
   },
   {

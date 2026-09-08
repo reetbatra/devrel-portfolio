@@ -178,17 +178,17 @@ export default function Experience() {
       </h2>
 
       <Job
-        period=""
+        period="Jan 2025 - Aug 2025"
         company="StarkWare"
-        role="Developer Relations Engineer"
+        role="Ecosystem DevRel Engineer"
         tags={["Cairo", "StarkNet", "ZK Proofs"]}
         bullets={[
           {
             num: "01",
             content: (
               <>
-                Organized India&apos;s first-ever Cairo bootcamp, reaching{" "}
-                <B>4,800+ developers</B> across 11 events nationwide.
+                Authored <B>12+ tutorials, demo apps, and video guides</B>{" "}
+                integrated into official Starknet documentation.
               </>
             ),
           },
@@ -196,9 +196,9 @@ export default function Experience() {
             num: "02",
             content: (
               <>
-                Cut onboarding time by <B>40%</B> and grew ecosystem adoption{" "}
-                <B>30%</B> mostly by rewriting docs and running hands-on
-                workshops instead of sending people to read whitepapers.
+                Created and hosted the <B>Starknet Builder Series</B>, episodes
+                averaging <B>4K to 8K organic views</B>, plus tool demos for
+                Starknet Foundry, Sasuke, Dojo, and Cartridge.
               </>
             ),
           },
@@ -206,8 +206,8 @@ export default function Experience() {
             num: "03",
             content: (
               <>
-                Ran <B>$21K in developer grants</B>. Picked projects, tracked
-                them, and pushed for the ones that actually moved the needle.
+                Ran developer feedback loops across Discord and GitHub,
+                turning recurring pain points into product roadmap input.
               </>
             ),
           },
@@ -216,7 +216,7 @@ export default function Experience() {
       />
 
       <Job
-        period=""
+        period="Sep 2024 - Jan 2025"
         company="DablClub"
         role="Developer Relations"
         tags={["Polygon", "AggLayer", "Education"]}
@@ -246,6 +246,44 @@ export default function Experience() {
               <>
                 Ran DevRel across Polygon and partners: writing, events,
                 showing up at hackathons, the whole thing.
+              </>
+            ),
+          },
+        ]}
+        borderBottom
+      />
+
+      <Job
+        period="Aug 2022 - Apr 2023"
+        company="ZKX (StarkCon)"
+        role="Developer Relations Manager"
+        tags={["Cairo", "Community", "Grants"]}
+        bullets={[
+          {
+            num: "01",
+            content: (
+              <>
+                Led StarkCon: <B>11 events</B> across India reaching{" "}
+                <B>4,800+ developers</B>, and established India&apos;s first
+                Cairo community.
+              </>
+            ),
+          },
+          {
+            num: "02",
+            content: (
+              <>
+                Organized India&apos;s first Cairo bootcamp: a{" "}
+                <B>5-week program with 600+ students</B>.
+              </>
+            ),
+          },
+          {
+            num: "03",
+            content: (
+              <>
+                Ran <B>$21K in developer grants</B>. Picked projects, tracked
+                them, and pushed for the ones that actually moved the needle.
               </>
             ),
           },
