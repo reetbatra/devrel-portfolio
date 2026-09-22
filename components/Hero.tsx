@@ -1,374 +1,114 @@
 import Image from "next/image";
 
+const socials = [
+  { label: "GitHub", href: "https://github.com/reetbatra" },
+  { label: "Twitter", href: "https://x.com/reet_batra" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/reet-batra/" },
+];
+
+const spec: [string, string][] = [
+  ["Role", "DevRel Engineer"],
+  ["Reached", "4,800+ developers"],
+  ["Experience", "4+ yrs DevRel"],
+  ["Workshops", "20+ offline"],
+  ["Based", "Bangalore, India"],
+];
+
 export default function Hero() {
   return (
     <section
       id="hero"
-      style={{
-        maxWidth: 1440,
-        margin: "0 auto",
-        padding: "0 48px",
-        minHeight: 680,
-        display: "grid",
-        gridTemplateColumns: "1fr 480px",
-        gap: 40,
-        alignItems: "center",
-      }}
+      className="mx-auto max-w-[1240px] border-b border-ink px-6 sm:px-8"
     >
-      {/* LEFT: Text */}
-      <div style={{ padding: "88px 0 80px" }}>
-        {/* Name */}
-        <h1
-          style={{
-            fontFamily: "var(--font-dm-serif), serif",
-            fontSize: "clamp(64px, 7vw, 112px)",
-            lineHeight: 0.92,
-            letterSpacing: "-0.03em",
-            color: "#1c1a17",
-            marginBottom: 28,
-          }}
-        >
-          Reet
-          <br />
-          <em style={{ color: "#c87358", fontStyle: "italic" }}>Batra.</em>
-        </h1>
+      <div className="grid md:grid-cols-2">
+        {/* LEFT: text */}
+        <div className="py-12 md:border-r md:border-rule md:py-16 md:pr-10">
+          <div className="t-label mb-8 flex items-center gap-2.5 text-muted">
+            <span className="h-[7px] w-[7px] bg-blue" aria-hidden />
+            DevRel Engineer · Web3 and AI
+          </div>
 
-        {/* Tagline */}
-        <p
-          style={{
-            fontFamily: "var(--font-jakarta), sans-serif",
-            fontSize: 17,
-            lineHeight: 1.72,
-            color: "#7a6d63",
-            maxWidth: 440,
-            marginBottom: 44,
-            fontWeight: 400,
-          }}
-        >
-          4 years of DevRel in Web3 and AI. I help protocols get adopted and
-          developers get unstuck.
-        </p>
+          <h1 className="t-display text-[clamp(46px,6.6vw,88px)]">
+            Reet
+            <span className="t-display-sub mt-1 block text-muted">Batra.</span>
+          </h1>
 
-        {/* CTAs */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 14,
-            flexWrap: "wrap",
-          }}
-        >
-          <a
-            href="mailto:reetbatra25@gmail.com"
-            className="cta-hire"
-            style={{
-              fontFamily: "var(--font-jakarta), sans-serif",
-              fontSize: 14,
-              fontWeight: 600,
-              background: "#1c1a17",
-              color: "#fdfaf5",
-              padding: "13px 28px",
-              borderRadius: 100,
-              transition: "opacity 0.2s",
-            }}
-          >
-            Hire Me
-          </a>
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-resume"
-            style={{
-              fontFamily: "var(--font-jakarta), sans-serif",
-              fontSize: 14,
-              fontWeight: 600,
-              background: "transparent",
-              color: "#1c1a17",
-              padding: "12px 28px",
-              borderRadius: 100,
-              border: "1.5px solid #c8b8a8",
-              transition: "border-color 0.2s",
-            }}
-          >
-            Resume ↗
-          </a>
-          <div
-            style={{
-              height: 20,
-              width: 1,
-              background: "#e0d0c0",
-              margin: "0 4px",
-            }}
-          />
-          {[
-            { label: "GitHub", href: "https://github.com/reetbatra" },
-            { label: "Twitter", href: "https://x.com/reet_batra" },
-            { label: "LinkedIn", href: "https://www.linkedin.com/in/reet-batra/" },
-          ].map((s) => (
+          <p className="mt-8 max-w-[46ch] text-[16.5px] leading-[1.6] text-ink-2">
+            4 years of DevRel in Web3 and AI. I help protocols get adopted and
+            developers <span className="mark">get unstuck</span>.
+          </p>
+
+          <div className="mt-10 flex w-fit border border-ink">
             <a
-              key={s.label}
-              href={s.href}
+              href="mailto:reetbatra25@gmail.com"
+              className="t-label flex min-h-12 items-center bg-ink px-6 text-paper transition-colors duration-150 hover:bg-blue"
+            >
+              Hire me
+            </a>
+            <a
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-link"
-              style={{
-                fontFamily: "var(--font-dm-mono), monospace",
-                fontSize: 11,
-                color: "#9c8c80",
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                transition: "color 0.15s",
-              }}
+              className="t-label flex min-h-12 items-center border-l border-ink px-6 transition-colors duration-150 hover:bg-acid"
             >
-              {s.label}
+              Resume ↗
             </a>
-          ))}
+          </div>
+
+          <ul className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-1">
+            {socials.map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="t-label flex min-h-11 items-center text-faint transition-colors duration-150 hover:text-blue"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* RIGHT: photo plate, then the spec sheet */}
+        <div className="flex flex-col pb-12 md:py-16 md:pl-10">
+          <figure className="border border-ink">
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-paper-2">
+              <Image
+                src="/hero-photo.jpg"
+                alt="Reet Batra giving a technical talk at ETH India"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 560px"
+                className="object-cover object-[72%_12%] contrast-[1.04] saturate-[0.92]"
+              />
+            </div>
+            <figcaption className="t-label flex items-center justify-between gap-3 border-t border-ink px-3 py-2.5 text-muted">
+              <span>Fig. 01 — ETH India, 2023</span>
+              <span className="text-blue" aria-hidden>
+                ■
+              </span>
+            </figcaption>
+          </figure>
+
+          <table className="mt-7 w-full border-collapse text-[12.5px]">
+            <tbody>
+              {spec.map(([k, v]) => (
+                <tr key={k} className="border-b border-rule">
+                  <th
+                    scope="row"
+                    className="t-label py-2.5 text-left font-normal text-muted"
+                  >
+                    {k}
+                  </th>
+                  <td className="py-2.5 text-right font-medium">{v}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
-
-      {/* RIGHT: Photo */}
-      <div style={{ position: "relative", height: 680, alignSelf: "stretch" }}>
-        {/* Warm blob background */}
-        <div
-          style={{
-            position: "absolute",
-            top: 32,
-            left: 16,
-            right: -48,
-            bottom: 0,
-            background: "linear-gradient(150deg, #f5ede3 0%, #e8d4c0 100%)",
-            borderRadius: "52% 48% 44% 56% / 58% 42% 58% 42%",
-            zIndex: 0,
-          }}
-        />
-        {/* Dot grid */}
-        <div
-          style={{
-            position: "absolute",
-            top: 16,
-            right: -16,
-            width: 96,
-            height: 96,
-            backgroundImage: "radial-gradient(#c87358 1.5px, transparent 1.5px)",
-            backgroundSize: "11px 11px",
-            opacity: 0.3,
-            zIndex: 0,
-          }}
-        />
-        {/* Decorative ring */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 64,
-            left: -8,
-            width: 56,
-            height: 56,
-            border: "2px solid #c87358",
-            borderRadius: "50%",
-            opacity: 0.2,
-            zIndex: 0,
-          }}
-        />
-        {/* Photo blob */}
-        <div
-          style={{
-            position: "absolute",
-            top: 24,
-            left: 24,
-            right: -24,
-            bottom: 16,
-            zIndex: 1,
-            overflow: "hidden",
-            borderRadius: "48% 52% 46% 54% / 52% 48% 54% 46%",
-          }}
-        >
-          <Image
-            src="/hero-photo.jpg"
-            alt="Reet Batra speaking at ETH India"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1100px) 360px, 480px"
-            style={{
-              objectFit: "cover",
-              objectPosition: "80% 6%",
-              filter: "saturate(1.05) brightness(1.02)",
-            }}
-            priority
-          />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "radial-gradient(ellipse 62% 68% at 62% 30%, transparent 40%, rgba(253,250,245,0.82) 100%)",
-            }}
-          />
-        </div>
-
-        {/* Chip: 4800+ devs */}
-        <div
-          className="chip-devs"
-          style={{
-            position: "absolute",
-            top: 56,
-            left: 0,
-            zIndex: 3,
-            background: "#1c1a17",
-            borderRadius: 100,
-            padding: "11px 20px",
-            boxShadow: "0 6px 20px rgba(28,26,23,0.18)",
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "var(--font-dm-serif), serif",
-              fontSize: 22,
-              color: "#c87358",
-              lineHeight: 1,
-            }}
-          >
-            4,800+
-          </span>
-          <span
-            style={{
-              fontFamily: "var(--font-dm-mono), monospace",
-              fontSize: 9,
-              color: "#6b6056",
-              letterSpacing: "0.07em",
-              textTransform: "uppercase",
-              lineHeight: 1.4,
-            }}
-          >
-            devs
-            <br />
-            reached
-          </span>
-        </div>
-
-        {/* Chip: 4+ yrs */}
-        <div
-          className="chip-yrs"
-          style={{
-            position: "absolute",
-            top: 144,
-            right: -8,
-            zIndex: 3,
-            background: "#c87358",
-            borderRadius: 100,
-            padding: "9px 18px",
-            boxShadow: "0 4px 16px rgba(200,115,88,0.35)",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "var(--font-dm-mono), monospace",
-              fontSize: 11,
-              color: "#fff",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            4+ yrs DevRel
-          </span>
-        </div>
-
-        {/* Chip: 20+ workshops */}
-        <div
-          className="chip-workshops"
-          style={{
-            position: "absolute",
-            bottom: 160,
-            right: -8,
-            zIndex: 3,
-            background: "#5a9e7c",
-            borderRadius: 100,
-            padding: "9px 18px",
-            boxShadow: "0 4px 16px rgba(90,158,124,0.3)",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "var(--font-dm-mono), monospace",
-              fontSize: 11,
-              color: "#fff",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            20+ offline workshops
-          </span>
-        </div>
-
-        {/* Chip: ETH India */}
-        <div
-          className="chip-eth"
-          style={{
-            position: "absolute",
-            bottom: 72,
-            left: -8,
-            zIndex: 3,
-            background: "#ffffff",
-            border: "1px solid #e4d4c4",
-            borderRadius: 14,
-            padding: "12px 18px",
-            boxShadow: "0 8px 28px rgba(28,26,23,0.1)",
-          }}
-        >
-          <div
-            style={{
-              fontFamily: "var(--font-dm-mono), monospace",
-              fontSize: 9,
-              color: "#9c8c80",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              marginBottom: 4,
-            }}
-          >
-            ETH India · 2023
-          </div>
-          <div
-            style={{
-              fontFamily: "var(--font-jakarta), sans-serif",
-              fontSize: 13,
-              fontWeight: 600,
-              color: "#1c1a17",
-            }}
-          >
-            Bangalore, India
-          </div>
-        </div>
-      </div>
-
-      <style>{`
-        .cta-hire:hover { opacity: 0.8; }
-        .cta-resume:hover { border-color: #9c8c80 !important; }
-        .social-link:hover { color: #1c1a17 !important; }
-
-        @media (max-width: 1100px) {
-          #hero { grid-template-columns: 1fr 360px !important; }
-        }
-        @media (max-width: 768px) {
-          #hero {
-            grid-template-columns: 1fr !important;
-            padding: 0 20px !important;
-            min-height: auto !important;
-            gap: 0 !important;
-          }
-          #hero > div:first-child { padding: 40px 0 24px !important; }
-          #hero > div:first-child h1 { font-size: 56px !important; }
-          #hero > div:last-child {
-            height: 360px !important;
-            margin: 0 -20px !important;
-          }
-          .chip-devs { top: 20px !important; left: 12px !important; }
-          .chip-yrs { top: 20px !important; right: 12px !important; }
-          .chip-workshops { bottom: 72px !important; right: 12px !important; }
-          .chip-eth { bottom: 12px !important; left: 12px !important; }
-        }
-      `}</style>
     </section>
   );
 }
