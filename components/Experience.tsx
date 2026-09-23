@@ -1,140 +1,302 @@
-import SectionHead from "./SectionHead";
-
-const B = ({ children }: { children: React.ReactNode }) => (
-  <strong className="font-semibold text-ink">{children}</strong>
+const SectionLabel = ({ text }: { text: string }) => (
+  <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 56 }}>
+    <span
+      style={{
+        fontFamily: "var(--font-dm-mono), monospace",
+        fontSize: 10,
+        color: "#c87358",
+        letterSpacing: "0.14em",
+        textTransform: "uppercase",
+      }}
+    >
+      {text}
+    </span>
+    <div style={{ flex: 1, height: 1, background: "#ece0d4" }} />
+  </div>
 );
 
-interface Job {
+const Tag = ({ children }: { children: React.ReactNode }) => (
+  <span
+    style={{
+      fontFamily: "var(--font-dm-mono), monospace",
+      fontSize: 10,
+      padding: "4px 11px",
+      background: "#f5ede3",
+      border: "1px solid #ddd0c0",
+      borderRadius: 100,
+      color: "#6b5e52",
+      letterSpacing: "0.04em",
+    }}
+  >
+    {children}
+  </span>
+);
+
+interface Bullet {
+  num: string;
+  content: React.ReactNode;
+}
+
+interface JobProps {
   period: string;
   company: string;
   role: string;
   tags: string[];
-  bullets: React.ReactNode[];
+  bullets: Bullet[];
+  borderBottom?: boolean;
 }
 
-const jobs: Job[] = [
-  {
-    period: "Jan 2025 - Aug 2025",
-    company: "StarkWare",
-    role: "Ecosystem DevRel Engineer",
-    tags: ["Developer Advocacy", "Technical Writing", "Video"],
-    bullets: [
-      <>
-        Authored <B>12+ tutorials, demo apps, and video guides</B> integrated
-        into official Starknet documentation.
-      </>,
-      <>
-        Created and hosted the <B>Starknet Builder Series</B>, episodes
-        averaging <B>4K to 8K organic views</B>, plus tool demos for Starknet
-        Foundry, Sasuke, Dojo, and Cartridge.
-      </>,
-      <>
-        Ran developer feedback loops across Discord and GitHub, turning recurring
-        pain points into product roadmap input.
-      </>,
-    ],
-  },
-  {
-    period: "Sep 2024 - Jan 2025",
-    company: "DablClub",
-    role: "Developer Relations",
-    tags: ["Hackathons", "Developer Education", "Partnerships"],
-    bullets: [
-      <>
-        Took <B>AggLayer</B> to ETH India and <B>ETH Global Bangkok</B>. A lot
-        of good conversations about what cross-chain really solves, and what it
-        doesn&apos;t.
-      </>,
-      <>
-        Built <B>Dabl Learn</B>, a learning platform covering Polygon,
-        AggLayer, and a few adjacent protocols.
-      </>,
-      <>
-        Ran DevRel across Polygon and partners: writing, events, showing up at
-        hackathons, the whole thing.
-      </>,
-    ],
-  },
-  {
-    period: "Aug 2022 - Apr 2023",
-    company: "ZKX (StarkCon)",
-    role: "Developer Relations Manager",
-    tags: ["Community Building", "Workshop Design", "Grant Ops"],
-    bullets: [
-      <>
-        Led <B>StarkCon</B>: <B>11 events</B> across India reaching{" "}
-        <B>4,800+ developers</B>, and established India&apos;s first Cairo
-        community.
-      </>,
-      <>
-        Organized India&apos;s first Cairo bootcamp: a{" "}
-        <B>5-week program with 600+ students</B>.
-      </>,
-      <>
-        Ran <B>$21K in developer grants</B>. Picked projects, tracked them, and
-        pushed for the ones that actually moved the needle.
-      </>,
-    ],
-  },
-];
+function Job({ period, company, role, tags, bullets, borderBottom }: JobProps) {
+  return (
+    <div
+      className="job-grid"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "1fr 2fr",
+        gap: 64,
+        paddingBottom: borderBottom ? 72 : 0,
+        borderBottom: borderBottom ? "1px solid #ece0d4" : "none",
+        marginBottom: borderBottom ? 72 : 0,
+      }}
+    >
+      <div>
+        {period && (
+          <div
+            style={{
+              fontFamily: "var(--font-dm-mono), monospace",
+              fontSize: 10,
+              color: "#9c8c80",
+              letterSpacing: "0.09em",
+              textTransform: "uppercase",
+              marginBottom: 14,
+            }}
+          >
+            {period}
+          </div>
+        )}
+        <h3
+          style={{
+            fontFamily: "var(--font-dm-serif), serif",
+            fontSize: 34,
+            color: "#1c1a17",
+            marginBottom: 8,
+            letterSpacing: "-0.015em",
+          }}
+        >
+          {company}
+        </h3>
+        <div
+          style={{
+            fontFamily: "var(--font-jakarta), sans-serif",
+            fontSize: 14,
+            color: "#7a6d63",
+            fontWeight: 500,
+            marginBottom: 22,
+          }}
+        >
+          {role}
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+          {tags.map((t) => (
+            <Tag key={t}>{t}</Tag>
+          ))}
+        </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 24,
+          paddingTop: 4,
+        }}
+      >
+        {bullets.map((b) => (
+          <div
+            key={b.num}
+            style={{
+              display: "grid",
+              gridTemplateColumns: "28px 1fr",
+              gap: 14,
+              alignItems: "start",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-dm-mono), monospace",
+                fontSize: 10,
+                color: "#c87358",
+                paddingTop: 2,
+                letterSpacing: "0.04em",
+              }}
+            >
+              {b.num}
+            </span>
+            <p
+              style={{
+                fontFamily: "var(--font-jakarta), sans-serif",
+                fontSize: 15.5,
+                lineHeight: 1.68,
+                color: "#4a4038",
+              }}
+            >
+              {b.content}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const B = ({ children }: { children: React.ReactNode }) => (
+  <strong style={{ fontWeight: 600, color: "#1c1a17" }}>{children}</strong>
+);
 
 export default function Experience() {
   return (
     <section
       id="experience"
-      className="mx-auto max-w-[1240px] px-6 pt-16 sm:px-8 md:pt-20"
+      style={{
+        padding: "100px 48px",
+        maxWidth: 1200,
+        margin: "0 auto",
+      }}
     >
-      <SectionHead
-        index="01"
-        label="Experience"
-        title="Who I&apos;ve done this for."
+      <SectionLabel text="01: Experience" />
+      <h2
+        style={{
+          fontFamily: "var(--font-dm-serif), serif",
+          fontSize: "clamp(40px, 4vw, 58px)",
+          lineHeight: 1.08,
+          color: "#1c1a17",
+          marginBottom: 76,
+          maxWidth: 620,
+          letterSpacing: "-0.025em",
+        }}
+      >
+        Where I spent the last few years.
+      </h2>
+
+      <Job
+        period="Jan 2025 - Aug 2025"
+        company="StarkWare"
+        role="Ecosystem DevRel Engineer"
+        tags={["Cairo", "StarkNet", "ZK Proofs"]}
+        bullets={[
+          {
+            num: "01",
+            content: (
+              <>
+                Authored <B>12+ tutorials, demo apps, and video guides</B>{" "}
+                integrated into official Starknet documentation.
+              </>
+            ),
+          },
+          {
+            num: "02",
+            content: (
+              <>
+                Created and hosted the <B>Starknet Builder Series</B>, episodes
+                averaging <B>4K to 8K organic views</B>, plus tool demos for
+                Starknet Foundry, Sasuke, Dojo, and Cartridge.
+              </>
+            ),
+          },
+          {
+            num: "03",
+            content: (
+              <>
+                Ran developer feedback loops across Discord and GitHub,
+                turning recurring pain points into product roadmap input.
+              </>
+            ),
+          },
+        ]}
+        borderBottom
       />
 
-      <div className="border-b border-ink">
-        {jobs.map((job, i) => (
-          <article
-            key={job.company}
-            className="grid gap-x-10 gap-y-6 border-b border-rule py-9 md:grid-cols-[1fr_1.9fr]"
-          >
-            <div>
-              <div className="t-label flex items-baseline gap-3 text-faint">
-                <span className="text-blue">0{i + 1}</span>
-                {job.period}
-              </div>
-              <h3 className="t-head mt-3 text-[clamp(26px,2.8vw,34px)]">
-                {job.company}
-              </h3>
-              <div className="mt-1.5 text-[14px] font-semibold text-muted">
-                {job.role}
-              </div>
-              <ul className="mt-5 flex flex-wrap gap-1.5">
-                {job.tags.map((t) => (
-                  <li
-                    key={t}
-                    className="t-label border border-rule px-2 py-1 text-[10px] text-muted"
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <Job
+        period="Sep 2024 - Jan 2025"
+        company="DablClub"
+        role="Developer Relations"
+        tags={["Polygon", "AggLayer", "Education"]}
+        bullets={[
+          {
+            num: "01",
+            content: (
+              <>
+                Took AggLayer to <B>ETH India</B> and{" "}
+                <B>ETH Global Bangkok</B>. A lot of good conversations about
+                what cross-chain really solves (and what it doesn&apos;t).
+              </>
+            ),
+          },
+          {
+            num: "02",
+            content: (
+              <>
+                Built <B>Dabl Learn</B>, a learning platform covering Polygon,
+                AggLayer, and a few adjacent protocols.
+              </>
+            ),
+          },
+          {
+            num: "03",
+            content: (
+              <>
+                Ran DevRel across Polygon and partners: writing, events,
+                showing up at hackathons, the whole thing.
+              </>
+            ),
+          },
+        ]}
+        borderBottom
+      />
 
-            <ol className="flex flex-col gap-5">
-              {job.bullets.map((b, bi) => (
-                <li
-                  key={bi}
-                  className="grid grid-cols-[28px_1fr] items-start gap-3"
-                >
-                  <span className="t-label pt-1 text-blue">
-                    {String(bi + 1).padStart(2, "0")}
-                  </span>
-                  <p className="text-[15px] leading-[1.65] text-ink-2">{b}</p>
-                </li>
-              ))}
-            </ol>
-          </article>
-        ))}
-      </div>
+      <Job
+        period="Aug 2022 - Apr 2023"
+        company="ZKX (StarkCon)"
+        role="Developer Relations Manager"
+        tags={["Cairo", "Community", "Grants"]}
+        bullets={[
+          {
+            num: "01",
+            content: (
+              <>
+                Led StarkCon: <B>11 events</B> across India reaching{" "}
+                <B>4,800+ developers</B>, and established India&apos;s first
+                Cairo community.
+              </>
+            ),
+          },
+          {
+            num: "02",
+            content: (
+              <>
+                Organized India&apos;s first Cairo bootcamp: a{" "}
+                <B>5-week program with 600+ students</B>.
+              </>
+            ),
+          },
+          {
+            num: "03",
+            content: (
+              <>
+                Ran <B>$21K in developer grants</B>. Picked projects, tracked
+                them, and pushed for the ones that actually moved the needle.
+              </>
+            ),
+          },
+        ]}
+      />
+
+      <style>{`
+        @media (max-width: 768px) {
+          #experience { padding: 56px 20px !important; max-width: 100% !important; }
+          .job-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+          .job-grid > div:first-child { padding-bottom: 0 !important; }
+        }
+      `}</style>
     </section>
   );
 }

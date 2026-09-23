@@ -1,5 +1,7 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import SectionHead from "./SectionHead";
 
 interface CommunityEvent {
   id: number;
@@ -12,7 +14,7 @@ interface CommunityEvent {
   photoAlt: string;
   overlayLabel: string;
   overlayTitle: string;
-  photoPosition: string;
+  photoPosition?: string;
 }
 
 const events: CommunityEvent[] = [
@@ -74,57 +76,229 @@ const events: CommunityEvent[] = [
   },
 ];
 
+function CommunityCard({ event }: { event: CommunityEvent }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: "#221f1c",
+        padding: 36,
+        position: "relative",
+        overflow: "hidden",
+        cursor: "default",
+      }}
+    >
+      <div
+        style={{
+          display: "inline-block",
+          fontFamily: "var(--font-dm-mono), monospace",
+          fontSize: 10,
+          padding: "3px 11px",
+          background: "rgba(200,115,88,0.12)",
+          border: "1px solid rgba(200,115,88,0.28)",
+          borderRadius: 100,
+          color: "#c87358",
+          letterSpacing: "0.06em",
+          marginBottom: 22,
+        }}
+      >
+        {event.badge}
+      </div>
+      <h4
+        style={{
+          fontFamily: "var(--font-dm-serif), serif",
+          fontSize: 26,
+          color: "#fdfaf5",
+          marginBottom: 6,
+          letterSpacing: "-0.01em",
+        }}
+      >
+        {event.title}
+      </h4>
+      <div
+        style={{
+          fontFamily: "var(--font-dm-mono), monospace",
+          fontSize: 10,
+          color: "#504840",
+          letterSpacing: "0.06em",
+          marginBottom: 14,
+          textTransform: "uppercase",
+        }}
+      >
+        {event.org}
+      </div>
+      <p
+        style={{
+          fontFamily: "var(--font-jakarta), sans-serif",
+          fontSize: 14,
+          color: "#7a6d63",
+          lineHeight: 1.65,
+        }}
+      >
+        {event.description}
+      </p>
+      <a
+        href={event.proofUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="proof-link"
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 5,
+          fontFamily: "var(--font-dm-mono), monospace",
+          fontSize: 10,
+          color: "#c87358",
+          letterSpacing: "0.06em",
+          textTransform: "uppercase",
+          marginTop: 16,
+          transition: "opacity 0.2s",
+        }}
+      >
+        View proof ↗
+      </a>
+
+      {/* Photo overlay */}
+      <div
+        className="community-photo-overlay"
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: hovered ? 1 : 0,
+          transition: "opacity 0.4s ease",
+          pointerEvents: "none",
+        }}
+      >
+        <Image
+          src={event.photo}
+          alt={event.photoAlt}
+          fill
+          style={{
+            objectFit: "cover",
+            objectPosition: event.photoPosition || "center",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to top, rgba(10,8,6,0.72) 0%, rgba(10,8,6,0.1) 60%, transparent 100%)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: 20,
+            left: 24,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "var(--font-dm-mono), monospace",
+              fontSize: 9,
+              color: "rgba(255,255,255,0.5)",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              marginBottom: 4,
+            }}
+          >
+            {event.overlayLabel}
+          </div>
+          <div
+            style={{
+              fontFamily: "var(--font-dm-serif), serif",
+              fontSize: 18,
+              color: "#fff",
+            }}
+          >
+            {event.overlayTitle}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Community() {
   return (
-    <section
-      id="community"
-      className="mx-auto max-w-[1240px] px-6 pt-16 sm:px-8 md:pt-20"
-    >
-      <SectionHead
-        index="04"
-        label="Community"
-        title="Where I show up."
-        lede="Eleven cities, a bootcamp, and a lot of rooms where nobody had written a line of Cairo before. Teaching in person is still the fastest way I know to find out what the docs got wrong."
-      />
-
-      <div className="grid border-b border-ink sm:grid-cols-2">
-        {events.map((e, i) => (
-          <a
-            key={e.id}
-            href={e.proofUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`group grid gap-5 border-b border-rule py-8 sm:grid-cols-[168px_1fr] ${
-              i % 2 === 1 ? "sm:border-l sm:border-rule sm:pl-8" : "sm:pr-8"
-            }`}
+    <div id="community" style={{ background: "#1c1a17", padding: "100px 48px" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 16,
+            marginBottom: 48,
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-dm-mono), monospace",
+              fontSize: 10,
+              color: "#c87358",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+            }}
           >
-            <div className="relative h-[190px] overflow-hidden border border-ink bg-ink">
-              <Image
-                src={e.photo}
-                alt={e.photoAlt}
-                fill
-                sizes="(max-width: 640px) 100vw, 168px"
-                className="object-cover saturate-[0.9] transition-[filter,transform] duration-500 group-hover:scale-[1.02] group-hover:saturate-100"
-                style={{ objectPosition: e.photoPosition }}
-              />
-            </div>
+            04: Community
+          </span>
+          <div style={{ flex: 1, height: 1, background: "#302c28" }} />
+        </div>
 
-            <div>
-              <span className="t-label border border-rule px-2 py-1 text-[10px] text-muted">
-                {e.badge}
-              </span>
-              <h3 className="t-head mt-4 text-[24px]">{e.title}</h3>
-              <div className="t-label mt-1.5 text-blue">{e.org}</div>
-              <p className="mt-3 text-[14.5px] leading-[1.62] text-muted">
-                {e.description}
-              </p>
-              <div className="t-label mt-4 text-faint transition-colors group-hover:text-ink">
-                View proof ↗
-              </div>
-            </div>
-          </a>
-        ))}
+        <h2
+          style={{
+            fontFamily: "var(--font-dm-serif), serif",
+            fontSize: "clamp(40px, 4vw, 58px)",
+            lineHeight: 1.08,
+            color: "#fdfaf5",
+            marginBottom: 14,
+            letterSpacing: "-0.025em",
+            maxWidth: 580,
+          }}
+        >
+          Where I show up.
+        </h2>
+        <p
+          style={{
+            fontFamily: "var(--font-jakarta), sans-serif",
+            fontSize: 16,
+            color: "#6b6056",
+            marginBottom: 56,
+            maxWidth: 500,
+            lineHeight: 1.68,
+          }}
+        >
+          Web3 taught me most of what I know. I try to do the same for whoever&apos;s coming up behind me.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 3,
+          }}
+        >
+          {events.map((event) => (
+            <CommunityCard key={event.id} event={event} />
+          ))}
+        </div>
       </div>
-    </section>
+
+      <style>{`
+        .proof-link:hover { opacity: 0.7; }
+        @media (hover: none) {
+          .community-photo-overlay { opacity: 0.16 !important; }
+        }
+        @media (max-width: 768px) {
+          #community { padding: 56px 20px !important; }
+          #community > div > div:last-child { grid-template-columns: 1fr !important; }
+          .community-photo-overlay { opacity: 0.16 !important; }
+        }
+      `}</style>
+    </div>
   );
 }

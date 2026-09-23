@@ -1,20 +1,60 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-paper/20 bg-ink text-paper">
-      <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-4 px-6 py-7 sm:px-8">
-        <span className="text-[15px] font-bold tracking-[-0.02em] [font-stretch:112%]">
-          REET BATRA
+    <footer
+      style={{
+        background: "#1c1a17",
+        padding: "28px 48px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "wrap",
+        gap: 16,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        <span
+          style={{
+            fontFamily: "var(--font-dm-serif), serif",
+            fontSize: 18,
+            color: "#fdfaf5",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          Reet Batra
         </span>
-        <span className="t-label text-paper/40">
+        <span
+          style={{
+            fontFamily: "var(--font-dm-mono), monospace",
+            fontSize: 10,
+            color: "#504840",
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+          }}
+        >
           DevRel · Web3 · AI
         </span>
-        <a
-          href="mailto:reetbatra25@gmail.com"
-          className="t-label flex min-h-11 items-center text-paper/55 transition-colors duration-150 hover:text-acid"
-        >
-          reetbatra25@gmail.com
-        </a>
       </div>
+      <span
+        style={{
+          fontFamily: "var(--font-dm-mono), monospace",
+          fontSize: 10,
+          color: "#504840",
+          letterSpacing: "0.05em",
+        }}
+      >
+        reetbatra25@gmail.com
+      </span>
+
+      <style>{`
+        @media (max-width: 768px) {
+          footer {
+            padding: 24px 20px !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 8px !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 }

@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main>
       <Hero />
       <Marquee />
       <Stats />
@@ -26,7 +25,6 @@ export default function Home() {
       <Video />
       <Blog />
       <Contact />
-      </main>
       <Footer />
     </>
   );

@@ -1,14 +1,15 @@
-import SectionHead from "./SectionHead";
+"use client";
+
+import { useState } from "react";
 
 interface Project {
   num: string;
   name: string;
-  category: string;
+  category: "AI" | "AI + Web3" | "Web3";
   description: string;
   tags: string[];
   github: string;
   live?: string;
-  featured?: boolean;
 }
 
 const projects: Project[] = [
@@ -21,7 +22,6 @@ const projects: Project[] = [
     tags: ["TypeScript", "Claude API", "Firecrawl", "Next.js"],
     github: "https://github.com/reetbatra/docs-parity",
     live: "https://docsparity.vercel.app/",
-    featured: true,
   },
   {
     num: "02",
@@ -71,79 +71,211 @@ const projects: Project[] = [
   },
 ];
 
+const categoryStyle: Record<
+  Project["category"],
+  { bg: string; border: string; color: string }
+> = {
+  AI: { bg: "#eef6f1", border: "#b4d8c4", color: "#3d7a5a" },
+  "AI + Web3": { bg: "#f2eeff", border: "#ccc0e8", color: "#5a4a8a" },
+  Web3: { bg: "#f0f0ff", border: "#c8c0e8", color: "#4a4a8a" },
+};
+
+function ProjectCard({ project }: { project: Project }) {
+  const [hovered, setHovered] = useState(false);
+  const cat = categoryStyle[project.category];
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: "#fdfaf5",
+        border: `1px solid ${hovered ? "#c87358" : "#e4d4c4"}`,
+        borderRadius: 14,
+        padding: 28,
+        transition: "border-color 0.2s, box-shadow 0.2s",
+        boxShadow: hovered ? "0 4px 20px rgba(200,115,88,0.1)" : "none",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          marginBottom: 18,
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "var(--font-dm-mono), monospace",
+            fontSize: 10,
+            padding: "3px 11px",
+            background: cat.bg,
+            border: `1px solid ${cat.border}`,
+            borderRadius: 100,
+            color: cat.color,
+            letterSpacing: "0.05em",
+          }}
+        >
+          {project.category}
+        </span>
+        <div style={{ display: "flex", gap: 14 }}>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="proj-gh-link"
+            style={{
+              fontFamily: "var(--font-dm-mono), monospace",
+              fontSize: 11,
+              color: "#9c8c80",
+              letterSpacing: "0.04em",
+              transition: "color 0.15s",
+            }}
+          >
+            GitHub ↗
+          </a>
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="proj-live-link"
+              style={{
+                fontFamily: "var(--font-dm-mono), monospace",
+                fontSize: 11,
+                color: "#c87358",
+                letterSpacing: "0.04em",
+                transition: "color 0.15s",
+              }}
+            >
+              Live ↗
+            </a>
+          )}
+        </div>
+      </div>
+
+      <h3
+        style={{
+          fontFamily: "var(--font-dm-serif), serif",
+          fontSize: 22,
+          color: "#1c1a17",
+          marginBottom: 10,
+          letterSpacing: "-0.01em",
+        }}
+      >
+        {project.name}
+      </h3>
+      <p
+        style={{
+          fontFamily: "var(--font-jakarta), sans-serif",
+          fontSize: 14,
+          lineHeight: 1.68,
+          color: "#7a6d63",
+          marginBottom: 20,
+        }}
+      >
+        {project.description}
+      </p>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            style={{
+              fontFamily: "var(--font-dm-mono), monospace",
+              fontSize: 10,
+              padding: "3px 10px",
+              background: "#f5ede3",
+              borderRadius: 100,
+              color: "#9c8c80",
+            }}
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Projects() {
   return (
     <section
       id="projects"
-      className="mx-auto max-w-[1240px] px-6 pt-16 sm:px-8 md:pt-20"
+      style={{
+        padding: "100px 48px",
+        maxWidth: 1200,
+        margin: "0 auto",
+      }}
     >
-      <SectionHead
-        index="03"
-        label="Projects"
-        title="I ship to understand it."
-        lede="You can&apos;t write a decent quickstart for something you&apos;ve only read about. So I build with the tools first, then write about them."
-      />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 16,
+          marginBottom: 48,
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "var(--font-dm-mono), monospace",
+            fontSize: 10,
+            color: "#c87358",
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+          }}
+        >
+          03: Projects
+        </span>
+        <div style={{ flex: 1, height: 1, background: "#ece0d4" }} />
+      </div>
 
-      <div className="border-b border-ink">
+      <h2
+        style={{
+          fontFamily: "var(--font-dm-serif), serif",
+          fontSize: "clamp(40px, 4vw, 58px)",
+          lineHeight: 1.08,
+          color: "#1c1a17",
+          marginBottom: 14,
+          letterSpacing: "-0.025em",
+        }}
+      >
+        Things I&apos;ve shipped.
+      </h2>
+      <p
+        style={{
+          fontFamily: "var(--font-jakarta), sans-serif",
+          fontSize: 16,
+          color: "#7a6d63",
+          marginBottom: 56,
+          maxWidth: 500,
+          lineHeight: 1.68,
+        }}
+      >
+        When I&apos;m not doing DevRel, I build. Mostly to understand what
+        I&apos;m supposed to be explaining.
+      </p>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: 20,
+        }}
+      >
         {projects.map((p) => (
-          <article
-            key={p.num}
-            className="grid items-baseline gap-x-6 gap-y-2 border-b border-rule py-6 transition-colors duration-150 hover:bg-paper-2 md:grid-cols-[72px_1.05fr_1.55fr_150px]"
-          >
-            <div className="t-label text-faint">{p.num}</div>
-
-            <div>
-              <h3 className="text-[20px] font-bold tracking-[-0.02em] [font-stretch:108%]">
-                {p.name}
-              </h3>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                <span className="t-label border border-rule px-2 py-0.5 text-[10px] text-muted">
-                  {p.category}
-                </span>
-                {p.featured && (
-                  <span className="t-label bg-acid px-2 py-0.5 text-[10px]">
-                    Flagship
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <p className="text-[14.5px] leading-[1.62] text-ink-2">
-                {p.description}
-              </p>
-              <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
-                {p.tags.map((t) => (
-                  <li key={t} className="t-label text-[10px] text-faint">
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex gap-4 md:justify-end">
-              <a
-                href={p.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="t-label flex min-h-11 items-center text-faint transition-colors duration-150 hover:text-ink"
-              >
-                GitHub ↗
-              </a>
-              {p.live && (
-                <a
-                  href={p.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="t-label flex min-h-11 items-center text-blue transition-colors duration-150 hover:bg-acid hover:text-ink"
-                >
-                  Live ↗
-                </a>
-              )}
-            </div>
-          </article>
+          <ProjectCard key={p.num} project={p} />
         ))}
       </div>
+
+      <style>{`
+        .proj-gh-link:hover { color: #1c1a17 !important; }
+        .proj-live-link:hover { color: #a85f3e !important; }
+        @media (max-width: 768px) {
+          #projects { padding: 56px 20px !important; max-width: 100% !important; }
+          #projects > div:last-of-type { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 }

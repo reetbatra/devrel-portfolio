@@ -1,57 +1,138 @@
-const socialLinks = [
-  { label: "GitHub ↗", href: "https://github.com/reetbatra" },
-  { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/reet-batra/" },
-  { label: "Twitter ↗", href: "https://x.com/reet_batra" },
-  { label: "Blog ↗", href: "https://reet.hashnode.dev/" },
-];
-
 export default function Contact() {
+  const socialLinks = [
+    { label: "GitHub ↗", href: "https://github.com/reetbatra" },
+    { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/reet-batra/" },
+    { label: "Twitter ↗", href: "https://x.com/reet_batra" },
+    { label: "Blog ↗", href: "https://reet.hashnode.dev/" },
+  ];
+
   return (
     <section
       id="contact"
-      className="border-t border-ink bg-ink text-paper"
+      style={{
+        padding: "120px 48px 100px",
+        maxWidth: 1200,
+        margin: "0 auto",
+      }}
     >
-      <div className="mx-auto max-w-[1240px] px-6 py-16 sm:px-8 md:py-20">
-        <div className="grid gap-x-6 gap-y-3 border-b border-paper/25 pb-6 md:grid-cols-[130px_1fr]">
-          <div className="t-label pt-1.5 text-acid">07 / Contact</div>
-          <div>
-            <div className="t-label mb-5 flex items-center gap-2.5 text-paper/55">
-              <span className="h-[7px] w-[7px] bg-acid" aria-hidden />
-              Currently looking
-            </div>
-            <h2 className="t-head max-w-[14ch] text-[clamp(32px,4.6vw,62px)]">
-              Got developers who can&apos;t get started?
-            </h2>
-            <p className="mt-6 max-w-[52ch] text-[15.5px] leading-[1.62] text-paper/70">
-              Looking for DevRel and developer experience roles. AI tooling
-              first, Web3 second.
-            </p>
-          </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 16,
+          marginBottom: 52,
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "var(--font-dm-mono), monospace",
+            fontSize: 10,
+            color: "#c87358",
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+          }}
+        >
+          07: Contact
+        </span>
+        <div style={{ flex: 1, height: 1, background: "#ece0d4" }} />
+      </div>
+
+      <div style={{ maxWidth: 820 }}>
+        <div
+          style={{
+            fontFamily: "var(--font-dm-mono), monospace",
+            fontSize: 10,
+            color: "#9c8c80",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            marginBottom: 24,
+          }}
+        >
+          Currently looking
         </div>
 
-        <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-          <a
-            href="mailto:reetbatra25@gmail.com"
-            className="t-label flex min-h-14 w-fit items-center border border-acid bg-acid px-7 text-ink transition-colors duration-150 hover:bg-transparent hover:text-acid"
-          >
-            reetbatra25@gmail.com
-          </a>
-          <ul className="flex flex-wrap gap-x-6 gap-y-1">
-            {socialLinks.map((s) => (
-              <li key={s.label}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="t-label flex min-h-11 items-center text-paper/55 transition-colors duration-150 hover:text-acid"
-                >
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <h2
+          style={{
+            fontFamily: "var(--font-dm-serif), serif",
+            fontSize: "clamp(52px, 6vw, 92px)",
+            lineHeight: 0.97,
+            color: "#1c1a17",
+            letterSpacing: "-0.035em",
+            marginBottom: 28,
+          }}
+        >
+          Have something
+          <br />
+          to build?
+          <br />
+          <em style={{ color: "#c87358", fontStyle: "italic" }}>Let&apos;s talk.</em>
+        </h2>
+
+        <p
+          style={{
+            fontFamily: "var(--font-jakarta), sans-serif",
+            fontSize: 17,
+            color: "#7a6d63",
+            lineHeight: 1.7,
+            maxWidth: 460,
+            marginBottom: 48,
+          }}
+        >
+          Looking for DevRel roles in AI or Web3.
+        </p>
+
+        <a
+          href="mailto:reetbatra25@gmail.com"
+          className="email-link"
+          style={{
+            fontFamily: "var(--font-dm-serif), serif",
+            fontSize: "clamp(18px, 2.2vw, 30px)",
+            color: "#c87358",
+            borderBottom: "1.5px solid #c87358",
+            paddingBottom: 3,
+            display: "inline-block",
+            marginBottom: 52,
+            transition: "opacity 0.2s",
+          }}
+        >
+          reetbatra25@gmail.com
+        </a>
+
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          {socialLinks.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-btn"
+              style={{
+                fontFamily: "var(--font-jakarta), sans-serif",
+                fontSize: 13.5,
+                fontWeight: 600,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 6,
+                padding: "10px 20px",
+                border: "1.5px solid #ddd0c0",
+                borderRadius: 100,
+                color: "#4a4038",
+                transition: "border-color 0.2s",
+              }}
+            >
+              {s.label}
+            </a>
+          ))}
         </div>
       </div>
+
+      <style>{`
+        .email-link:hover { opacity: 0.7; }
+        .social-btn:hover { border-color: #9c8c80 !important; }
+        @media (max-width: 768px) {
+          #contact { padding: 64px 20px 64px !important; max-width: 100% !important; }
+        }
+      `}</style>
     </section>
   );
 }
