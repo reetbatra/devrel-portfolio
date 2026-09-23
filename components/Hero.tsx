@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="py-12 md:border-r md:border-rule md:py-16 md:pr-10">
           <div className="t-label mb-8 flex items-center gap-2.5 text-muted">
             <span className="h-[7px] w-[7px] bg-blue" aria-hidden />
-            DevRel Engineer · Web3 and AI
+            DevRel Engineer · AI tooling and Web3
           </div>
 
           <h1 className="t-display text-[clamp(46px,6.6vw,88px)]">
@@ -34,8 +34,9 @@ export default function Hero() {
           </h1>
 
           <p className="mt-8 max-w-[46ch] text-[16.5px] leading-[1.6] text-ink-2">
-            4 years of DevRel in Web3 and AI. I help protocols get adopted and
-            developers <span className="mark">get unstuck</span>.
+            Four years of DevRel across AI tooling and Web3 infrastructure. I
+            work the gap between a good product and a developer who{" "}
+            <span className="mark">can&apos;t get it running</span>.
           </p>
 
           <div className="mt-10 flex w-fit border border-ink">
@@ -85,7 +86,7 @@ export default function Hero() {
               />
             </div>
             <figcaption className="t-label flex items-center justify-between gap-3 border-t border-ink px-3 py-2.5 text-muted">
-              <span>Fig. 01 — ETH India, 2023</span>
+              <span>Fig. 01 · ETH India, 2023</span>
               <span className="text-blue" aria-hidden>
                 ■
               </span>

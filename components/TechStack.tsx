@@ -32,7 +32,7 @@ export default function TechStack() {
       id="skills"
       className="mx-auto max-w-[1240px] px-6 pt-16 sm:px-8 md:pt-20"
     >
-      <SectionHead index="02" label="Skills" title="What I work with." />
+      <SectionHead index="02" label="Skills" title="What I&apos;m good at." />
 
       <div className="grid border-b border-ink md:grid-cols-2">
         {categories.map((cat, i) => (

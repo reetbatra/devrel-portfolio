@@ -84,7 +84,7 @@ export default function Community() {
         index="04"
         label="Community"
         title="Where I show up."
-        lede="Web3 taught me most of what I know. I try to do the same for whoever's coming up behind me."
+        lede="Eleven cities, a bootcamp, and a lot of rooms where nobody had written a line of Cairo before. Teaching in person is still the fastest way I know to find out what the docs got wrong."
       />
 
       <div className="grid border-b border-ink sm:grid-cols-2">

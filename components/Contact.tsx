@@ -20,10 +20,11 @@ export default function Contact() {
               Currently looking
             </div>
             <h2 className="t-head max-w-[14ch] text-[clamp(32px,4.6vw,62px)]">
-              Have something to build?
+              Got developers who can&apos;t get started?
             </h2>
             <p className="mt-6 max-w-[52ch] text-[15.5px] leading-[1.62] text-paper/70">
-              Looking for DevRel roles in AI or Web3.
+              Looking for DevRel and developer experience roles. AI tooling
+              first, Web3 second.
             </p>
           </div>
         </div>

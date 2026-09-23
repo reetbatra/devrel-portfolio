@@ -8,14 +8,14 @@ export default function Blog() {
         <div>
           <div className="t-label mb-5 text-blue">06 / Blog</div>
           <h2 className="t-head max-w-[14ch] text-[clamp(30px,3.6vw,50px)]">
-            I write about what I learn.
+            I write it down.
           </h2>
         </div>
 
         <div>
           <p className="max-w-[46ch] text-[15.5px] leading-[1.62] text-muted">
-            I write about what I&apos;m figuring out: Cairo, ZK, AI agents, the
-            DevRel work. Notes for myself that turned into posts.
+            Cairo, ZK, AI agents, the DevRel work. Notes I kept for myself
+            that turned into twenty-one posts.
           </p>
           <a
             href="https://reet.hashnode.dev/"

@@ -87,7 +87,7 @@ export default function Experience() {
       <SectionHead
         index="01"
         label="Experience"
-        title="Where I spent the last few years."
+        title="Who I&apos;ve done this for."
       />
 
       <div className="border-b border-ink">

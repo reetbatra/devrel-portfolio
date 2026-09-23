@@ -141,8 +141,8 @@ export default function Video() {
       <SectionHead
         index="05"
         label="On Camera"
-        title="I record things too."
-        lede="Short videos on Cairo, ZK tooling, and builders worth knowing about. Most are under 5 minutes."
+        title="On camera, under five minutes."
+        lede="Short videos on tooling and the people who build with it. A good one lands between four and eight thousand views, and that&apos;s where most of my reach comes from."
       />
 
       <div className="t-label border-b border-rule py-4 text-blue">

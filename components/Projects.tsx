@@ -80,8 +80,8 @@ export default function Projects() {
       <SectionHead
         index="03"
         label="Projects"
-        title="Things I've shipped."
-        lede="When I'm not doing DevRel, I build. Mostly to understand what I'm supposed to be explaining."
+        title="I ship to understand it."
+        lede="You can&apos;t write a decent quickstart for something you&apos;ve only read about. So I build with the tools first, then write about them."
       />
 
       <div className="border-b border-ink">
