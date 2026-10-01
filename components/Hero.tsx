@@ -105,6 +105,7 @@ export default function Hero() {
             { label: "GitHub", href: "https://github.com/reetbatra" },
             { label: "Twitter", href: "https://x.com/reet_batra" },
             { label: "LinkedIn", href: "https://www.linkedin.com/in/reet-batra/" },
+            { label: "YouTube", href: "https://www.youtube.com/@Reet-DevRel" },
           ].map((s) => (
             <a
               key={s.label}

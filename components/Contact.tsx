@@ -2,6 +2,7 @@ export default function Contact() {
   const socialLinks = [
     { label: "GitHub ↗", href: "https://github.com/reetbatra" },
     { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/reet-batra/" },
+    { label: "YouTube ↗", href: "https://www.youtube.com/@Reet-DevRel" },
     { label: "Twitter ↗", href: "https://x.com/reet_batra" },
     { label: "Blog ↗", href: "https://reet.hashnode.dev/" },
   ];
