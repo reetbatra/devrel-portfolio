@@ -33,7 +33,7 @@ export default function Contact() {
             textTransform: "uppercase",
           }}
         >
-          07: Contact
+          08: Contact
         </span>
         <div style={{ flex: 1, height: 1, background: "#ece0d4" }} />
       </div>

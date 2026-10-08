@@ -396,7 +396,7 @@ export default function Video() {
             textTransform: "uppercase",
           }}
         >
-          05: On Camera
+          06: On Camera
         </span>
         <div style={{ flex: 1, height: 1, background: "#ece0d4" }} />
       </div>

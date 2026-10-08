@@ -5,6 +5,7 @@ import { useState } from "react";
 const links = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Open Source", href: "#open-source" },
   { label: "Community", href: "#community" },
   { label: "Videos", href: "#video" },
   { label: "Blog", href: "https://reet.hashnode.dev/" },

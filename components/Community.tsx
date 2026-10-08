@@ -244,7 +244,7 @@ export default function Community() {
               textTransform: "uppercase",
             }}
           >
-            04: Community
+            05: Community
           </span>
           <div style={{ flex: 1, height: 1, background: "#302c28" }} />
         </div>
