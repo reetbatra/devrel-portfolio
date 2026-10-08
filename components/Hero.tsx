@@ -357,6 +357,7 @@ export default function Hero() {
             padding: 0 20px !important;
             min-height: auto !important;
             gap: 0 !important;
+            overflow-x: clip;
           }
           #hero > div:first-child { padding: 40px 0 24px !important; }
           #hero > div:first-child h1 { font-size: 56px !important; }
